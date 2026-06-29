@@ -1,1 +1,114 @@
+<!DOCTYPE html>
+<html lang="FR-fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Portfolio — FlyerCraft</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
 
+<!-- ── HEADER ───────────────────────────── -->
+<header style="display: flex; justify-content: center; align-items: center; min-height: 80px; width: 100%;">
+  <a href="../index.html" class="logo" style="display: flex; align-items: center; gap: 14px; text-decoration: none;">
+    <div class="logo-icon" style="display: flex; align-items: center; justify-content: center;">
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 48px; height: 48px;">
+        <defs>
+          <linearGradient id="birdGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%"   stop-color="#60c8ff"/>
+            <stop offset="50%"  stop-color="#a855f7"/>
+            <stop offset="100%" stop-color="#f97316"/>
+          </linearGradient>
+        </defs>
+        <path d="M32 10 C20 18, 8 28, 6 44 C14 38, 22 34, 32 36 C42 34, 50 38, 58 44 C56 28, 44 18, 32 10Z"
+              fill="url(#birdGrad)" opacity="0.9"/>
+        <path d="M32 20 C26 28, 18 34, 14 46 C20 42, 26 40, 32 44 C38 40, 44 42, 50 46 C46 34, 38 28, 32 20Z"
+              fill="#1a0a30" opacity="0.6"/>
+        <circle cx="32" cy="24" r="3" fill="#fff" opacity="0.9"/>
+      </svg>
+    </div>
+    <div class="logo-text" style="display: flex; flex-direction: column; line-height: 1.2;">
+      <span class="brand" style="font-size: 24px; font-weight: 700; color: #7C3AED; letter-spacing: 1px;">FLYERCRAFT</span>
+    </div>
+  </a>
+</header>
+
+<!-- ── WIDGET BULLE FLOTTANT ────────────── -->
+<div id="floatingBubble" class="floating-bubble">
+  <div class="bubble-inner">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<!-- ── MENU OVERLAY ──────────────────────── -->
+<div id="menuOverlay" class="menu-overlay">
+  <div class="menu-card">
+    <button id="menuClose" class="menu-close" aria-label="Fermer">&times;</button>
+    <a href="../index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l2-2m0 0l7-7 7 7m-14 0v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001 1h3a1 1 0 001-1m-6 0v-6"/></svg>
+      Accueil
+    </a>
+    <a href="portfolio.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      Portfolio
+    </a>
+    <a href="../index.html#services">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+      Services
+    </a>
+    <a href="../index.html#pricing">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+      Tarifs
+    </a>
+    <a href="../index.html#order">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Commander
+    </a>
+  </div>
+</div>
+
+<!-- ── CARROUSEL ─────────────────────────── -->
+<main class="carousel-main">
+  <div class="carousel-header">
+    <h1>Mes <span class="grad">réalisations</span></h1>
+    <p>Faites défiler pour découvrir mes projets</p>
+  </div>
+
+  <div class="carousel-container">
+    
+    <button id="prevBtn" class="carousel-btn prev" aria-label="Précédent">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+    </button>
+
+    <div class="carousel-track-wrapper">
+      <div id="carouselTrack" class="carousel-track">
+        <!-- Slides générés automatiquement -->
+      </div>
+    </div>
+
+    <button id="nextBtn" class="carousel-btn next" aria-label="Suivant">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+    </button>
+
+  </div>
+
+  <div id="carouselDots" class="carousel-dots"></div>
+</main>
+
+<!-- ── FOOTER ─────────────────────────────── -->
+<footer>
+  <div class="footer-logo">FLYERCRAFT</div>
+  <p>© 2026 FlyerCraft — Tous droits réservés</p>
+</footer>
+
+<script src="portfolio.js"></script>
+</body>
+</html>
