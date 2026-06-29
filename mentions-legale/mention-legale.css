@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #0a0a0a;
+    color: white;
+    line-height: 1.6;
+    overflow-x: hidden; /* ✅ Fix : empêche les cards de sortir de l'écran */
+}
+
+header {
+    padding: 25px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    background: #0a0a0a;
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(15px);
+    z-index: 100;
+}
+
+.logo {
+    text-decoration: none;
+    font-size: 32px;
+    font-weight: 900;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.hero {
+    padding: 90px 20px 50px;
+    text-align: center;
+}
+
+.badge {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, .06);
+    border: 1px solid rgba(255, 255, 255, .08);
+    margin-bottom: 25px;
+    font-size: 14px;
+    color: #d1d5db;
+}
+
+.hero h1 {
+    font-size: 52px;
+    margin-bottom: 15px;
+}
+
+.gradient {
+    background: linear-gradient(90deg, #a855f7, #ec4899, #f97316);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: auto;
+    color: #9ca3af;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px 20px 80px;
+    display: grid;
+    gap: 25px;
+}
+
+.card {
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: 22px;
+    padding: 30px;
+    transition: .3s ease;
+    /* ✅ Fix : valeur de départ définie en CSS pour éviter le flash */
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    
+}
+
+/* ✅ Classe ajoutée par le JS quand la card est visible */
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.card p {
+    color: #bdbdbd;
+    margin-bottom: 10px;
+}
+
+.back {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 16px 30px;
+    border-radius: 14px;
+    background: linear-gradient(90deg, #9333ea, #ec4899);
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+footer {
+    padding: 35px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, .08);
+}
+
+.footer-logo {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #777;
+}
+
+/* ✅ Respect du mode réduction de mouvement */
+@media (prefers-reduced-motion: reduce) {
+    .card {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
